@@ -25,7 +25,7 @@ format:
     css: thpe.css
     #monofont: "Fira Code" # does not work yet
     transition: fade
-    data-transition-speed: fast
+    data-transition-speed: slow
     navigation-mode: linear
     slide-number: true
     code-line-numbers: false
@@ -38,7 +38,7 @@ webr:
   packages: ['PBSddesolve'] # Install R packages on document open
 filters:
   - webr
-embed-resources: true
+#embed-resources: true
 ---
 
 ```{r echo=FALSE}
@@ -146,7 +146,7 @@ Openness, courage, problem-solving skills, collaboration
 
 ## Example 1: Lake Profile Plotter
 
-<br>
+<br></br>
 
 ::: {.column width="49%"}
 * COVID online teaching
@@ -171,13 +171,15 @@ The image is rather small, but the idea is to either:
 - open link: it opens in a new browser tab, then move back by selecting the presentation tab
 --->
 
-<br>
+<br></br>
 
 ::: {.column width="33%"}
-<br>
-* Visualisation of climate trends
-* Direct access to DWD data
-* Successfully used in teaching and public outreach
+
+<br></br>
+
+* Visualisation of climate data and trends
+* Direct access to data from the [German Weather Service](https://www.dwd.de)
+* Used in teaching and for public outreach
 :::
 
 ::: {.column width="66%"}
@@ -186,13 +188,15 @@ The image is rather small, but the idea is to either:
 
 ## Example 3: Reservoir Management with GOTM
 
-<br>
+<br></br>
 
 ::: {.column width="33%"}
-<br>
-* Full hydrophysical model as web service
-* 1D model, quick performance
+
+<br></br>
+
+* 1D hydrophysical model provided as web service
 * Predefined scenarios
+* Quick performance
 * Results can be downloaded
 :::
 
@@ -284,11 +288,11 @@ $$
 * "Many believe that system dynamics has helped them become skilled at
 inventing the future, either by sketching out causal loops on the 
 back of an envelope, or by assembling equations of cause and effect in a
-computer model. Both approaches work." (J. W. Forrester, 1995)
+computer model. Both approaches work." (Forrester, 1995)
 
 * "... students can deal with high-order dynamic systems
 without ever discovering that their elders consider such to be very difficult."
-(J. W. Forrester 2009)
+(Forrester 2009)
 
 
 
@@ -403,13 +407,43 @@ plot(yout$time, yout$N, type = "l", col = "forestgreen")
 
 
 
-<!--
-::: {.column width="33%"}
- lorem ipsum
 
-:::
 
-::: {.column width="66%"}
+
+
+## Outlook: Growth Model Dashboard
+
+
+![[https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/](https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/)](img/populationswachstum.png)
+
+
+## Conclusions
+
+<br>
+
+### Possibilities
+
+* Evolving technologies for data analysis and modeling
+* Server-based or on local computer
+* Numerical libraries, visualization, reporting and presentation freely available
+
+<br>
+
+### Challenges
+
+* Modern didactic concepts needed, technical approach is not enough.
+* Formulation of texts:
+    - detailed vs. brief explanations?
+    - appropriate level? [(background knowledge would make understanding easier)]{.gray}
+* Graphical presentation will need professionals.
+* Avoid "cinema mode" 
+* Encourage further studies and the motivation to dig deeper.
+
+
+# [Thank you!]{.orange} {background-image="img/tud-title-bg-wide-2021.png"}
+
+## Bonus slide: A Lotka-Volterra model
+
 
 ```{webr-r}
 #|  context: interactive
@@ -435,40 +469,4 @@ yout  <- dde(y = y0, times = 0:200, func = model, parms = parms)
 plot(yout$time, yout$A, type = "l", col = "forestgreen")
 lines(yout$time, yout$B, col = "red")
 ```
-:::
--->
-
-
-
-
-## Outlook: Growth Model Dashboard
-
-
-![[https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/](https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/)](img/populationswachstum.png)
-
-
-## Conclusions
-
-<br>
-
-### Possibilities
-
-* Evolving technologies for data analysis and modeling
-* Server-based or on local computer
-* Numerical libraries, visualization, reporting and presentation freely available
-
-<br>
-
-### Challenges
-
-* Modern didactic concepts needed, technical approach is not enough
-* Formulation of texts:
-    - detailed vs. brief explanations
-    - appropriate level (some prerequisites make understanding easier)
-* Graphical presentation needs professionals.
-* Avoid "cinema mode" 
-* Encourage self study and advanced courses
-
-
-# [Thank you!]{.orange} {background-image="img/tud-title-bg-wide-2021.png"}
 
