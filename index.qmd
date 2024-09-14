@@ -442,6 +442,10 @@ plot(yout$time, yout$N, type = "l", col = "forestgreen")
 
 # [Thank you!]{.orange} {background-image="img/tud-title-bg-wide-2021.png"}
 
+<br><br><br>
+
+[Funded by the  Digital Learning and Teaching Fund of TU Dresden]{.neongreen} [($\rightarrow$ Fonds DLL)](https://tu-dresden.de/zill/foerdermoeglichkeiten/fondsdll?set_language=en)
+
 ## Bonus slide: A Lotka-Volterra model
 
 
