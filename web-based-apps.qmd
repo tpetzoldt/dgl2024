@@ -1,0 +1,474 @@
+---
+author: "Thomas Petzoldt and Johannes Feldbauer"
+title: "Web-based applications"
+subtitle: "(how) to motivate students to become enthusiastic data scientists and modelers?"
+date:   "2024-09-17"
+date-format: "YYYY-MM-DD"
+output-dir: docs
+title-slide-attributes:
+  data-background-image: "img/tud-title-bg-wide-2021.png"
+  body-color: "#069af22"
+#  data-background-opacity: "0.5"
+include-in-header:
+  - text: |
+      <style>
+      #title-slide 
+        .title {color: #ee7f00;}
+        .subtitle {color: #ee7f00;}
+        .quarto-title-author {color: #69af22;}
+        .date {color: #69af22;}
+      </style>  
+
+format: 
+  revealjs:
+    theme: [sky, thpe-large.scss]
+    css: thpe.css
+    #monofont: "Fira Code" # does not work yet
+    transition: fade
+    data-transition-speed: fast
+    navigation-mode: linear
+    slide-number: true
+    code-line-numbers: false
+    link-external-newwindow: true
+    footer: "<span style='color: white; font-size: small; font-weight:400; float: right; margin-top: 40px; margin-right: 4%;'> [&#x1F3E0;](../) </span>"
+#bibliography: bib.bib
+#csl: apa.csl
+webr: 
+  show-startup-message: false    # Disable displaying status of webR initialization
+  packages: ['PBSddesolve'] # Install R packages on document open
+filters:
+  - webr
+embed-resources: true
+---
+
+```{r echo=FALSE}
+library("DiagrammeR")
+```
+
+
+# Status and Aim {data-background-color="#006ab2"}
+
+## Current Situation
+
+<br>
+
+Modeling and data science became an important part of limnology.
+
+<br>
+
+
+**Demand in Research and Engineering**
+
+* people who can use computers
+* people who can understand models
+* people who are able to develop models
+
+**School Experience** 
+
+* mathematics is complicated
+* programming is something for nerds 
+* differential calculus is rocket science
+
+
+
+
+## Ecology and Modeling Skills at Different Levels
+
+<br>
+
+**1. Field and Laboratory Ecologists**
+
+- Skills: Field and lab ecology, hypotheses, fundamental stats/modeling
+- Role: Collect data, inform research, experimental design
+
+**2. Ecological Data Analysts**
+
+- Skills: Ecology, data analysis, statistics, communication
+- Role: Analyze data, inform decisions
+
+**3. Ecological Modelers**
+
+- Skills: Ecology, statistics and modeling, programming, computation
+- Role: Develop models, simulate processes, interpret outcomes
+
+**4. Ecological Data Science and Modeling Specialists**
+
+- Skills: Data science, machine learning + AI, fundamentals of ecology
+- Role: Create algorithms, develop data-driven and knowledge-based solutions
+
+<!--
+
+## Different target groups
+
+<br>
+
+1. General Public
+2. Interested public
+3. People with domain specific education
+4. Specialists
+
+<br>
+
+**Example**
+
+* School kids and their parents
+* People who are aware of climate change
+* Participants of an ecological conference
+* Reservoir management professionals
+
+Common in most application domains: ecology, modeling, social science, art
+
+-->
+
+# What to do? {data-background-color="#006ab2"}
+
+## Approach it from two sides
+
+<br>
+
+Ecologists $\leftarrow$ **modeling**
+
+Data scientists $\leftarrow$ **ecology**
+
+<br>
+
+* Introduce ecology **and** modeling early
+* Reduce barriers: success experience -- respect but no fear
+* Use a playful approach and motivate for more:
+    - Link back to the scientific fundamentals of ecology / modeling.
+    - Motivate to find the right depth level, from "interested" to "professional"
+
+<br>
+
+Openness, courage, problem-solving skills, collaboration
+
+
+
+## Example 1: Lake Profile Plotter
+
+<br>
+
+::: {.column width="49%"}
+* COVID online teaching
+* Multiparameter probe data
+    - Complex interactions between temperature, light, algae, oxygen, pH, conductivity
+    - Excel data structures, plotting, trend line, colors, ... distract from content
+    - Limited time
+:::
+
+::: {.column width="50%"}
+![[https://weblab.hydro.tu-dresden.de/app/lakeplot/](https://weblab.hydro.tu-dresden.de/app/lakeplot/)](img/lakeplot.png)
+:::
+
+$\Rightarrow$ Has also passed its acid test in field courses.
+
+## Example 2: Climate Data Explorer
+
+<!---
+The image is rather small, but the idea is to either:
+
+- zoom in with Alt + Mouse click to center of Zoom region
+- open link: it opens in a new browser tab, then move back by selecting the presentation tab
+--->
+
+<br>
+
+::: {.column width="33%"}
+<br>
+* Visualisation of climate trends
+* Direct access to DWD data
+* Successfully used in teaching and public outreach
+:::
+
+::: {.column width="66%"}
+![[https://weblab.hydro.tu-dresden.de/app/dwd-trends/](https://weblab.hydro.tu-dresden.de/app/dwd-trends/)](img/dwd-trends.png)
+:::
+
+## Example 3: Reservoir Management with GOTM
+
+<br>
+
+::: {.column width="33%"}
+<br>
+* Full hydrophysical model as web service
+* 1D model, quick performance
+* Predefined scenarios
+* Results can be downloaded
+:::
+
+::: {.column width="66%"}
+![[https://weblab.hydro.tu-dresden.de/app/talsperre/](https://weblab.hydro.tu-dresden.de/app/talsperre/)](img/talsperre.png)
+:::
+
+
+
+<!---
+
+## Example 3: Growth Models (iframe)
+
+```{=html}
+<iframe width="100%" height="100%" src="https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/" title="Wachstumsmodelle"></iframe>
+```
+
+[https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/](https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/)
+
+
+## {background-iframe="https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/" background-interactive=true}
+
+-->
+
+
+
+# Cinema is not enough!<br> Focus on Processes {data-background-color="#006ab2"}
+
+
+## Which kind of description is the simplest?
+
+<br>
+
+**Example: Logistic Growth Model**
+
+<br>
+
+Difference Equation
+
+$$
+N_{t+1} = r_{max} \cdot N_{t} \cdot \left(1-\frac{N}{K}\right)
+$$
+
+Differential equation
+
+$$
+\begin{align}
+\frac{dN}{dt} &= r_{max}  \cdot N\cdot \left(1 - \frac{N}{K}\right)
+\end{align}
+$$
+
+Closed-form integral solution
+
+$$
+N_t = \frac{K N_0 e^{r t}}{K + N_0 (e^{r t}-1)}
+$$
+
+
+## Advantages and Disadvantages
+
+<br>
+
+* **Mechanism vs. Solution:**<br> The differential equation form is more intuitive for understanding underlying mechanisms.
+* **Accessibility:**<br> The closed-form solution can be less intimidating for those unfamiliar with calculus.
+* **Complexity:**<br> Closed-form solutions can become difficult or impossible for complex models.
+
+
+**Priority**
+
+* Understanding the dynamics of systems, focusing on changes, gains, and losses, rather than excessive calculus.
+
+**Implementation**
+
+* Employ numerical solvers to analyze complex models.
+
+**... and then gain a deeper understanding**
+
+
+## Jay W. Forrester: System Dynamics
+
+::: {#fig-calculus layout-ncol=2 fig-cap="Forrester, J.W. (2009) Some Basic Concepts in System Dynamics"}
+
+![System](img/forrester-fig3.png){width="65%"}
+
+![Model](img/forrester-fig4.png){width="46%"}
+
+:::
+
+* "Many believe that system dynamics has helped them become skilled at
+inventing the future, either by sketching out causal loops on the 
+back of an envelope, or by assembling equations of cause and effect in a
+computer model. Both approaches work." (J. W. Forrester, 1995)
+
+* "... students can deal with high-order dynamic systems
+without ever discovering that their elders consider such to be very difficult."
+(J. W. Forrester 2009)
+
+
+
+
+<!--
+Link does not  exist anymore
+(https://web.mit.edu/sysdyn/sd-intro/D-4165-1.pdf)
+-->
+
+
+
+## System Dynamics Presentation
+
+
+
+```{r fig.height=4}
+grViz("digraph feedback {
+         graph [rankdir = 'LR', bgcolor='none']
+           node [shape = box, penwidth=2, fontname = 'Helvetica']
+             'Population N'
+           node [shape = octagon, penwidth=0.5, style='rounded', fixedsize=25, fontsize=8]
+             Source Sink
+           node [shape = none, fontsize=10]
+             birth death
+           edge [penwidth=1.5]
+             Source -> birth -> 'Population N' -> death -> Sink
+           edge [penwidth=0.7, tailport = 'n', headport = 'n', constraint = false, color=tomato]
+             'Population N' -> birth 
+             'Population N' -> death
+}")
+```
+
+$$
+\begin{align}
+\frac{dN}{dt} &= \mbox{birth} - \mbox{death}\\
+              & = \mbox{birthrate} \cdot N - \mbox{deathrate}\cdot N\\
+              &= b \cdot N - d \cdot N = (b-d) \cdot N \\
+\frac{dN}{dt} &= r \cdot N\\
+\end{align}
+$$
+
+<!-- 
+
+Note: the following allows to execute the R code in the browser
+using web-assembly and web-r: https://docs.r-wasm.org/
+
+To enable it, one a terminal in RStudio and then install
+
+quarto add coatless/quarto-webr
+
+Then render it in RStudio and the resulting 
+
+-->
+
+## Implementation
+
+<hr></hr>
+ 
+
+::: {.column width="32%"}
+
+Exponential growth
+
+$$
+\frac{dN}{dt} = r \cdot N
+$$
+
+<br>
+
+
+Logistic growth
+
+$$
+\frac{dN}{dt} = r \cdot N \cdot \left(1-\frac{N}{K}\right)\\
+$$
+
+<br>
+
+**Exercise**
+
+1. Run the code.
+2. Modify it to simulate logistic growth.
+3. Play with the parameter values.
+:::
+
+::: {.column width="67%"}
+
+```{webr-r}
+#|  context: interactive
+#|  autorun: false
+#|  label: lotka-volterra
+#|  fig-height: 2.5
+#|  fig-width: 7
+
+library("PBSddesolve")
+par(mar=c(4, 4, 1, 1), las = 1)
+
+model <- function(t, y, parms) {
+  with(as.list(c(y, parms)), {
+    dN <- r * N
+    list(c(dN))
+  })
+}
+
+y0    <- c(N = 1)
+parms <- c(r = 0.1)
+yout  <- dde(y = y0, times = 0:50, func = model, parms = parms)
+plot(yout$time, yout$N, type = "l", col = "forestgreen")
+
+```
+:::
+
+
+
+<!--
+::: {.column width="33%"}
+ lorem ipsum
+
+:::
+
+::: {.column width="66%"}
+
+```{webr-r}
+#|  context: interactive
+#|  autorun: false
+#|  label: lotka-volterra
+#|  fig-height: 2.5
+#|  fig-width: 7
+
+library("PBSddesolve")
+par(mar=c(4, 4, 1, 1), las = 1)
+
+model <- function(t, y, parms) {
+  with(as.list(c(y, parms)), {
+    dA <- a * A - b * A * B
+    dB <- c * A * B - d * B
+    list(c(dA, dB))
+  })
+}
+
+y0    <- c(A = 1, B = 0.5)
+parms <- c(a = 0.1, b = 0.1, c = 0.1, d = 0.1)
+yout  <- dde(y = y0, times = 0:200, func = model, parms = parms)
+plot(yout$time, yout$A, type = "l", col = "forestgreen")
+lines(yout$time, yout$B, col = "red")
+```
+:::
+-->
+
+
+
+
+## Outlook: Growth Model Dashboard
+
+
+![[https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/](https://weblab.hydro.tu-dresden.de/app/wachstumsmodelle/)](img/populationswachstum.png)
+
+
+## Conclusions
+
+<br>
+
+### Possibilities
+
+* Evolving technologies for data analysis and modeling
+* Server-based or on local computer
+* Numerical libraries, visualization, reporting and presentation freely available
+
+<br>
+
+### Challenges
+
+* Modern didactic concepts needed, technical approach is not enough
+* Formulation of texts:
+    - detailed vs. brief explanations
+    - appropriate level (some prerequisites make understanding easier)
+* Graphical presentation needs professionals.
+* Avoid "cinema mode" 
+* Encourage self study and advanced courses
+
+
+# [Thank you!]{.orange} {background-image="img/tud-title-bg-wide-2021.png"}
+
