@@ -45,8 +45,36 @@ filters:
 library("DiagrammeR")
 ```
 
-
+<!--
 # Status and Aim {data-background-color="#006ab2"}
+-->
+
+## Hooray -- We have got a new project!
+
+<hr></hr>
+
+![](img/funding.png){width="80%"}
+
+<!--
+FUNDING DECISION - DIGITAL LEARNING AND TEACHING FUND 2023
+
+Dear ...
+
+Thank you for your application to the Digital Learning and Teaching Fund for the 2023/2024 funding period.
+
+We are pleased to announce the funding of the project "SimBiose - Simulation of biological
+processes - digitally supported teaching and learning in specialist and teacher training programmes".
+to announce. This decision was made at the jury meeting chaired by the Vice-Rector Education
+
+For the realisation of the project: ..... euros are available to you.
+
+Please note that ...
+
+-->
+
+## Qualified People?
+
+![Search for qualified students who are interested in ecology **and** modeling](img/unitag.jpg)
 
 ## Current Situation
 

@@ -8,7 +8,7 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.554">
+  <meta name="generator" content="quarto-1.4.555">
 
   <meta name="author" content="Thomas Petzoldt and Johannes Feldbauer">
   <meta name="dcterms.date" content="2024-09-17">
@@ -629,7 +629,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"id":1,"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dN <- r * N\n    list(c(dN))\n  })\n}\n\ny0    <- c(N = 1)\nparms <- c(r = 0.1)\nyout  <- dde(y = y0, times = 0:50, func = model, parms = parms)\nplot(yout$time, yout$N, type = \"l\", col = \"forestgreen\")","options":{"editor-font-scale":"0.5","read-only":"false","comment":"","context":"interactive","label":"lotka-volterra","fig-height":"2.5","out-height":"","editor-word-wrap":"true","results":"markup","output":"true","autorun":"false","warning":"true","message":"true","classes":"","editor-quick-suggestions":"false","fig-cap":"","dpi":72,"out-width":"700px","fig-width":"7","editor-max-height":""}},{"id":2,"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dA <- a * A - b * A * B\n    dB <- c * A * B - d * B\n    list(c(dA, dB))\n  })\n}\n\ny0    <- c(A = 1, B = 0.5)\nparms <- c(a = 0.1, b = 0.1, c = 0.1, d = 0.1)\nyout  <- dde(y = y0, times = 0:200, func = model, parms = parms)\nplot(yout$time, yout$A, type = \"l\", col = \"forestgreen\")\nlines(yout$time, yout$B, col = \"red\")","options":{"editor-font-scale":"0.5","read-only":"false","comment":"","context":"interactive","label":"lotka-volterra","fig-height":"2.5","out-height":"","editor-word-wrap":"true","results":"markup","output":"true","autorun":"false","warning":"true","message":"true","classes":"","editor-quick-suggestions":"false","fig-cap":"","dpi":72,"out-width":"700px","fig-width":"7","editor-max-height":""}}];
+  globalThis.qwebrCellDetails = [{"options":{"classes":"","message":"true","context":"interactive","warning":"true","out-height":"","results":"markup","read-only":"false","fig-width":"7","editor-word-wrap":"true","editor-max-height":"","comment":"","editor-font-scale":"0.5","dpi":72,"autorun":"false","output":"true","fig-cap":"","out-width":"700px","editor-quick-suggestions":"false","label":"lotka-volterra","fig-height":"2.5"},"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dN <- r * N\n    list(c(dN))\n  })\n}\n\ny0    <- c(N = 1)\nparms <- c(r = 0.1)\nyout  <- dde(y = y0, times = 0:50, func = model, parms = parms)\nplot(yout$time, yout$N, type = \"l\", col = \"forestgreen\")","id":1},{"options":{"classes":"","message":"true","context":"interactive","warning":"true","out-height":"","results":"markup","read-only":"false","fig-width":"7","editor-word-wrap":"true","editor-max-height":"","comment":"","editor-font-scale":"0.5","dpi":72,"autorun":"false","output":"true","fig-cap":"","out-width":"700px","editor-quick-suggestions":"false","label":"lotka-volterra","fig-height":"2.5"},"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dA <- a * A - b * A * B\n    dB <- c * A * B - d * B\n    list(c(dA, dB))\n  })\n}\n\ny0    <- c(A = 1, B = 0.5)\nparms <- c(a = 0.1, b = 0.1, c = 0.1, d = 0.1)\nyout  <- dde(y = y0, times = 0:200, func = model, parms = parms)\nplot(yout$time, yout$A, type = \"l\", col = \"forestgreen\")\nlines(yout$time, yout$B, col = \"red\")","id":2}];
 
   </script>
   <script type="module">
@@ -2129,11 +2129,22 @@ Thomas Petzoldt and Johannes Feldbauer
 
   <p class="date">2024-09-17</p>
 </section>
-<section>
-<section id="status-and-aim" class="title-slide slide level1 center" data-background-color="#006ab2">
-<h1>Status and Aim</h1>
+<section class="slide level2">
 
+<!--
+# Status and Aim {data-background-color="#006ab2"}
+-->
 </section>
+<section id="hooray-we-have-got-a-new-project" class="slide level2">
+<h2>Hooray – We have got a new project!</h2>
+<hr>
+
+
+<img data-src="img/funding.png" style="width:80.0%" class="r-stretch"></section>
+<section id="qualified-people" class="slide level2">
+<h2>Qualified People?</h2>
+
+<img data-src="img/unitag.jpg" class="r-stretch quarto-figure-center"><p class="caption">Search for qualified students who are interested in ecology <strong>and</strong> modeling</p></section>
 <section id="current-situation" class="slide level2">
 <h2>Current Situation</h2>
 <p><br></p>
@@ -2198,7 +2209,7 @@ Thomas Petzoldt and Johannes Feldbauer
 Common in most application domains: ecology, modeling, social science, art
 
 -->
-</section></section>
+</section>
 <section>
 <section id="what-to-do" class="title-slide slide level1 center" data-background-color="#006ab2">
 <h1>What to do?</h1>
@@ -2396,8 +2407,8 @@ Link does not  exist anymore
 <h2>System Dynamics Presentation</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-e813eb4da7fa316cca35" style="width:960px;height:384px;"></div>
-<script type="application/json" data-for="htmlwidget-e813eb4da7fa316cca35">{"x":{"diagram":"digraph feedback {\n         graph [rankdir = \"LR\", bgcolor=\"none\"]\n           node [shape = box, penwidth=2, fontname = \"Helvetica\"]\n             \"Population N\"\n           node [shape = octagon, penwidth=0.5, style=\"rounded\", fixedsize=25, fontsize=8]\n             Source Sink\n           node [shape = none, fontsize=10]\n             birth death\n           edge [penwidth=1.5]\n             Source -> birth -> \"Population N\" -> death -> Sink\n           edge [penwidth=0.7, tailport = \"n\", headport = \"n\", constraint = false, color=tomato]\n             \"Population N\" -> birth \n             \"Population N\" -> death\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-f280d2b11363a3b3231e" style="width:960px;height:384px;"></div>
+<script type="application/json" data-for="htmlwidget-f280d2b11363a3b3231e">{"x":{"diagram":"digraph feedback {\n         graph [rankdir = \"LR\", bgcolor=\"none\"]\n           node [shape = box, penwidth=2, fontname = \"Helvetica\"]\n             \"Population N\"\n           node [shape = octagon, penwidth=0.5, style=\"rounded\", fixedsize=25, fontsize=8]\n             Source Sink\n           node [shape = none, fontsize=10]\n             birth death\n           edge [penwidth=1.5]\n             Source -> birth -> \"Population N\" -> death -> Sink\n           edge [penwidth=0.7, tailport = \"n\", headport = \"n\", constraint = false, color=tomato]\n             \"Population N\" -> birth \n             \"Population N\" -> death\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><span class="math display">\[
