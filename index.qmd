@@ -46,18 +46,17 @@ library("DiagrammeR")
 ```
 
 
-# Do you know this? {data-background-color="#006ab2"}
+# Have you ever experienced something like this? {data-background-color="#006ab2"}
 
 
 ## Hooray -- We have got a new project!
 
-<hr></hr>
+<br></br>
 
 
-::: {.column width="49%"}
-<br><br>
-<small>
-FUNDING DECISION - DIGITAL LEARNING AND TEACHING FUND 2023
+::: {.column width="52%"}
+<smallfont>
+**Funding Decision<br>Digital learning and teaching 2023**
 
 Dear ...
 
@@ -65,16 +64,16 @@ Thank you for your application to the Digital Learning and Teaching Fund for the
 
 We are pleased to announce the funding of the project "SimBiose - Simulation of biological
 processes - digitally supported teaching and learning in specialist and teacher training programmes".
-to announce. This decision was made at the jury meeting chaired by the Vice-Rector Education
+...
 
 For the realisation of the project: ..... euros are available to you.
 
 Please note that ...
-</small>
+</smallfont>
 :::
 
 
-::: {.column width="50%"}
+::: {.column width="47%"}
 ![](img/funding.png) <!--{width="80%"} -->
 :::
 
@@ -102,6 +101,11 @@ $\Rightarrow$ Modeling and data science became an important part of limnology.
 * [mathematics]{.neongreen} is complicated
 * [programming]{.neongreen} is something for nerds 
 * differential [calculus]{.neongreen} is rocket science
+
+**Domain knowledge** 
+
+<!-- channge this if for another conference -->
+* limnology, of course 😉
 
 
 <!--
@@ -150,7 +154,7 @@ Common in most application domains: ecology, modeling, social science, art
 
 -->
 
-# What to do? {data-background-color="#006ab2"}
+
 
 ## Approach it from two sides
 
@@ -162,15 +166,15 @@ Data scientists $\leftarrow$ **ecology**
 
 <br>
 
-* Introduce ecology **and** modeling early
-* Reduce barriers: success experience -- respect but no fear
-* Use a playful approach and motivate for more:
+1. Introduce ecology **and** modeling early
+2. Reduce barriers: success experience -- respect but no fear
+3. Use a playful approach and motivate for more:
     - Link back to the scientific fundamentals of ecology / modeling.
     - Motivate to find the right depth level, from "interested" to "professional"
 
 <br>
 
-Openness, courage, problem-solving skills, collaboration
+Let's speak about 1+2 first.
 
 
 
@@ -179,7 +183,7 @@ Openness, courage, problem-solving skills, collaboration
 <br></br>
 
 ::: {.column width="49%"}
-* COVID online teaching
+* developed for COVID online teaching
 * Multiparameter probe data
     - Complex interactions between temperature, light, algae, oxygen, pH, conductivity
     - Excel data structures, plotting, trend line, colors, ... distract from content
@@ -263,12 +267,13 @@ The image is rather small, but the idea is to either:
 **Example: Logistic Growth Model**
 
 <br>
-
+<!--
 Difference Equation
 
 $$
 N_{t+1} = N_t + r_{max} \cdot N_{t} \cdot \left(1-\frac{N}{K}\right)
 $$
+-->
 
 Differential equation
 
@@ -278,13 +283,18 @@ $$
 \end{align}
 $$
 
+* intuitive understanding of mechanisms 
+* needs numrical solver
+
 Closed-form integral solution
 
 $$
 N_t = \frac{K N_0 e^{r t}}{K + N_0 (e^{r t}-1)}
 $$
+* can be plotted with Excel
+* mechanisms difficult to access
 
-
+<!--
 ## Advantages and Disadvantages
 
 <br>
@@ -303,7 +313,7 @@ $$
 * Employ numerical solvers to analyze complex models.
 
 **... and then gain a deeper understanding**
-
+-->
 
 ## Jay W. Forrester: System Dynamics
 
@@ -335,8 +345,7 @@ Link does not  exist anymore
 
 
 
-## System Dynamics Presentation
-
+## System Dynamics
 
 
 ```{r fig.height=4}
@@ -455,19 +464,18 @@ plot(yout$time, yout$N, type = "l", col = "forestgreen")
 
 * Evolving technologies for data analysis and modeling
 * Server-based or on local computer
-* Numerical libraries, visualization, reporting and presentation freely available
+* Numerical libraries, visualization, reporting ... freely available
 
 <br>
 
 ### Challenges
 
-* Modern didactic concepts needed, technical approach is not enough.
+* Modern didactic concept requred, technical approach is not enough.
 * Formulation of texts:
     - detailed vs. brief explanations?
-    - appropriate level? [(background knowledge would make understanding easier)]{.gray}
+    - target group?
 * Graphical presentation will need professionals.
-* Avoid "cinema mode" 
-* Encourage further studies and the motivation to dig deeper.
+* Avoid "cinema mode" and encourage further studies to dig deeper.
 
 
 # [Thank you!]{.orange} {background-image="img/tud-title-bg-wide-2021.png"}

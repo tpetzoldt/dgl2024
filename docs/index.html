@@ -8,7 +8,7 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.555">
+  <meta name="generator" content="quarto-1.4.554">
 
   <meta name="author" content="Thomas Petzoldt and Johannes Feldbauer">
   <meta name="dcterms.date" content="2024-09-17">
@@ -629,7 +629,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"options":{"classes":"","message":"true","context":"interactive","warning":"true","out-height":"","results":"markup","read-only":"false","fig-width":"7","editor-word-wrap":"true","editor-max-height":"","comment":"","editor-font-scale":"0.5","dpi":72,"autorun":"false","output":"true","fig-cap":"","out-width":"700px","editor-quick-suggestions":"false","label":"lotka-volterra","fig-height":"2.5"},"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dN <- r * N\n    list(c(dN))\n  })\n}\n\ny0    <- c(N = 1)\nparms <- c(r = 0.1)\nyout  <- dde(y = y0, times = 0:50, func = model, parms = parms)\nplot(yout$time, yout$N, type = \"l\", col = \"forestgreen\")","id":1},{"options":{"classes":"","message":"true","context":"interactive","warning":"true","out-height":"","results":"markup","read-only":"false","fig-width":"7","editor-word-wrap":"true","editor-max-height":"","comment":"","editor-font-scale":"0.5","dpi":72,"autorun":"false","output":"true","fig-cap":"","out-width":"700px","editor-quick-suggestions":"false","label":"lotka-volterra","fig-height":"2.5"},"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dA <- a * A - b * A * B\n    dB <- c * A * B - d * B\n    list(c(dA, dB))\n  })\n}\n\ny0    <- c(A = 1, B = 0.5)\nparms <- c(a = 0.1, b = 0.1, c = 0.1, d = 0.1)\nyout  <- dde(y = y0, times = 0:200, func = model, parms = parms)\nplot(yout$time, yout$A, type = \"l\", col = \"forestgreen\")\nlines(yout$time, yout$B, col = \"red\")","id":2}];
+  globalThis.qwebrCellDetails = [{"id":1,"options":{"label":"lotka-volterra","results":"markup","dpi":72,"autorun":"false","editor-quick-suggestions":"false","out-width":"700px","read-only":"false","warning":"true","context":"interactive","fig-width":"7","comment":"","out-height":"","message":"true","fig-cap":"","fig-height":"2.5","editor-word-wrap":"true","classes":"","output":"true","editor-font-scale":"0.5","editor-max-height":""},"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dN <- r * N\n    list(c(dN))\n  })\n}\n\ny0    <- c(N = 1)\nparms <- c(r = 0.1)\nyout  <- dde(y = y0, times = 0:50, func = model, parms = parms)\nplot(yout$time, yout$N, type = \"l\", col = \"forestgreen\")"},{"id":2,"options":{"label":"lotka-volterra","results":"markup","dpi":72,"autorun":"false","editor-quick-suggestions":"false","out-width":"700px","read-only":"false","warning":"true","context":"interactive","fig-width":"7","comment":"","out-height":"","message":"true","fig-cap":"","fig-height":"2.5","editor-word-wrap":"true","classes":"","output":"true","editor-font-scale":"0.5","editor-max-height":""},"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dA <- a * A - b * A * B\n    dB <- c * A * B - d * B\n    list(c(dA, dB))\n  })\n}\n\ny0    <- c(A = 1, B = 0.5)\nparms <- c(a = 0.1, b = 0.1, c = 0.1, d = 0.1)\nyout  <- dde(y = y0, times = 0:200, func = model, parms = parms)\nplot(yout$time, yout$A, type = \"l\", col = \"forestgreen\")\nlines(yout$time, yout$B, col = \"red\")"}];
 
   </script>
   <script type="module">
@@ -2129,18 +2129,26 @@ Thomas Petzoldt and Johannes Feldbauer
 
   <p class="date">2024-09-17</p>
 </section>
-<section class="slide level2">
+<section>
+<section id="have-you-ever-experienced-something-like-this" class="title-slide slide level1 center" data-background-color="#006ab2">
+<h1>Have you ever experienced something like this?</h1>
 
-<!--
-# Status and Aim {data-background-color="#006ab2"}
--->
 </section>
 <section id="hooray-we-have-got-a-new-project" class="slide level2">
 <h2>Hooray – We have got a new project!</h2>
-<hr>
-
-
-<img data-src="img/funding.png" style="width:80.0%" class="r-stretch"></section>
+<p><br><br></p>
+<div class="column" style="width:52%;">
+<p><smallfont> <strong>Funding Decision<br>Digital learning and teaching 2023</strong></smallfont></p>
+<p>Dear …</p>
+<p>Thank you for your application to the Digital Learning and Teaching Fund for the 2023/2024 funding period.</p>
+<p>We are pleased to announce the funding of the project “SimBiose - Simulation of biological processes - digitally supported teaching and learning in specialist and teacher training programmes”. …</p>
+<p>For the realisation of the project: ….. euros are available to you.</p>
+<p>Please note that … </p>
+</div>
+<div class="column" style="width:47%;">
+<p><img data-src="img/funding.png"> <!--{width="80%"} --></p>
+</div>
+</section>
 <section id="qualified-people" class="slide level2">
 <h2>Qualified People?</h2>
 
@@ -2148,44 +2156,46 @@ Thomas Petzoldt and Johannes Feldbauer
 <section id="current-situation" class="slide level2">
 <h2>Current Situation</h2>
 <p><br></p>
-<p>Modeling and data science became an important part of limnology.</p>
+<p><span class="math inline">\(\Rightarrow\)</span> Modeling and data science became an important part of limnology.</p>
 <p><br></p>
 <p><strong>Demand in Research and Engineering</strong></p>
 <ul>
-<li>people who can use computers</li>
-<li>people who can understand models</li>
-<li>people who are able to develop models</li>
+<li>people who can <span class="cyan">use</span> computers</li>
+<li>people who can <span class="cyan">understand</span> models</li>
+<li>people who are able to <span class="cyan">develop</span> models</li>
 </ul>
 <p><strong>School Experience</strong></p>
 <ul>
-<li>mathematics is complicated</li>
-<li>programming is something for nerds</li>
-<li>differential calculus is rocket science</li>
+<li><span class="neongreen">mathematics</span> is complicated</li>
+<li><span class="neongreen">programming</span> is something for nerds</li>
+<li>differential <span class="neongreen">calculus</span> is rocket science</li>
 </ul>
-</section>
-<section id="ecology-and-modeling-skills-at-different-levels" class="slide level2">
-<h2>Ecology and Modeling Skills at Different Levels</h2>
-<p><br></p>
-<p><strong>1. Field and Laboratory Ecologists</strong></p>
+<p><strong>Domain knowledge</strong></p>
+<!-- channge this if for another conference -->
 <ul>
-<li>Skills: Field and lab ecology, hypotheses, fundamental stats/modeling</li>
-<li>Role: Collect data, inform research, experimental design</li>
+<li>limnology, of course 😉</li>
 </ul>
-<p><strong>2. Ecological Data Analysts</strong></p>
-<ul>
-<li>Skills: Ecology, data analysis, statistics, communication</li>
-<li>Role: Analyze data, inform decisions</li>
-</ul>
-<p><strong>3. Ecological Modelers</strong></p>
-<ul>
-<li>Skills: Ecology, statistics and modeling, programming, computation</li>
-<li>Role: Develop models, simulate processes, interpret outcomes</li>
-</ul>
-<p><strong>4. Ecological Data Science and Modeling Specialists</strong></p>
-<ul>
-<li>Skills: Data science, machine learning + AI, fundamentals of ecology</li>
-<li>Role: Create algorithms, develop data-driven and knowledge-based solutions</li>
-</ul>
+<!--
+
+## Ecology and Modeling Skills at Different Levels
+
+<br>
+
+**1. Field and Laboratory Ecologists**
+
+- Skills: Field and lab ecology, hypotheses, fundamental stats/modeling
+- Role: Experimental design, perform experiments, collect data, conduct research
+
+**2. Ecological Data Analysts and modelers**
+
+- Skills: Ecology, statistics and modeling, programming, computation
+- Role: Analyze data, develop models, simulate processes, interpret outcomes
+
+**3. Ecological Data Science and Modeling Specialists**
+
+- Skills: Data science, machine learning + AI, fundamentals of ecology
+- Role: Create algorithms, develop data-driven and knowledge-based solutions
+-->
 <!--
 
 ## Different target groups
@@ -2210,18 +2220,13 @@ Common in most application domains: ecology, modeling, social science, art
 
 -->
 </section>
-<section>
-<section id="what-to-do" class="title-slide slide level1 center" data-background-color="#006ab2">
-<h1>What to do?</h1>
-
-</section>
 <section id="approach-it-from-two-sides" class="slide level2">
 <h2>Approach it from two sides</h2>
 <p><br></p>
 <p>Ecologists <span class="math inline">\(\leftarrow\)</span> <strong>modeling</strong></p>
 <p>Data scientists <span class="math inline">\(\leftarrow\)</span> <strong>ecology</strong></p>
 <p><br></p>
-<ul>
+<ol type="1">
 <li>Introduce ecology <strong>and</strong> modeling early</li>
 <li>Reduce barriers: success experience – respect but no fear</li>
 <li>Use a playful approach and motivate for more:
@@ -2229,16 +2234,16 @@ Common in most application domains: ecology, modeling, social science, art
 <li>Link back to the scientific fundamentals of ecology / modeling.</li>
 <li>Motivate to find the right depth level, from “interested” to “professional”</li>
 </ul></li>
-</ul>
+</ol>
 <p><br></p>
-<p>Openness, courage, problem-solving skills, collaboration</p>
+<p>Let’s speak about 1+2 first.</p>
 </section>
 <section id="example-1-lake-profile-plotter" class="slide level2">
 <h2>Example 1: Lake Profile Plotter</h2>
 <p><br><br></p>
 <div class="column" style="width:49%;">
 <ul>
-<li>COVID online teaching</li>
+<li>developed for COVID online teaching</li>
 <li>Multiparameter probe data
 <ul>
 <li>Complex interactions between temperature, light, algae, oxygen, pH, conductivity</li>
@@ -2331,39 +2336,47 @@ The image is rather small, but the idea is to either:
 <h2>Which kind of description is the simplest?</h2>
 <p><br></p>
 <p><strong>Example: Logistic Growth Model</strong></p>
-<p><br></p>
-<p>Difference Equation</p>
-<p><span class="math display">\[
-N_{t+1} = r_{max} \cdot N_{t} \cdot \left(1-\frac{N}{K}\right)
-\]</span></p>
+<p><br> <!--
+Difference Equation
+
+$$
+N_{t+1} = N_t + r_{max} \cdot N_{t} \cdot \left(1-\frac{N}{K}\right)
+$$
+--></p>
 <p>Differential equation</p>
 <p><span class="math display">\[
 \begin{align}
 \frac{dN}{dt} &amp;= r_{max}  \cdot N\cdot \left(1 - \frac{N}{K}\right)
 \end{align}
 \]</span></p>
+<ul>
+<li>intuitive understanding of mechanisms</li>
+<li>needs numrical solver</li>
+</ul>
 <p>Closed-form integral solution</p>
 <p><span class="math display">\[
 N_t = \frac{K N_0 e^{r t}}{K + N_0 (e^{r t}-1)}
-\]</span></p>
-</section>
-<section id="advantages-and-disadvantages" class="slide level2">
-<h2>Advantages and Disadvantages</h2>
-<p><br></p>
-<ul>
-<li><strong>Mechanism vs.&nbsp;Solution:</strong><br> The differential equation form is more intuitive for understanding underlying mechanisms.</li>
-<li><strong>Accessibility:</strong><br> The closed-form solution can be less intimidating for those unfamiliar with calculus.</li>
-<li><strong>Complexity:</strong><br> Closed-form solutions can become difficult or impossible for complex models.</li>
-</ul>
-<p><strong>Priority</strong></p>
-<ul>
-<li>Understanding the dynamics of systems, focusing on changes, gains, and losses, rather than excessive calculus.</li>
-</ul>
-<p><strong>Implementation</strong></p>
-<ul>
-<li>Employ numerical solvers to analyze complex models.</li>
-</ul>
-<p><strong>… and then gain a deeper understanding</strong></p>
+\]</span> * can be plotted with Excel * mechanisms difficult to access</p>
+<!--
+## Advantages and Disadvantages
+
+<br>
+
+* **Mechanism vs. Solution:**<br> The differential equation form is more intuitive for understanding underlying mechanisms.
+* **Accessibility:**<br> The closed-form solution can be less intimidating for those unfamiliar with calculus.
+* **Complexity:**<br> Closed-form solutions can become difficult or impossible for complex models.
+
+
+**Priority**
+
+* Understanding the dynamics of systems, focusing on changes, gains, and losses, rather than excessive calculus.
+
+**Implementation**
+
+* Employ numerical solvers to analyze complex models.
+
+**... and then gain a deeper understanding**
+-->
 </section>
 <section id="jay-w.-forrester-system-dynamics" class="slide level2">
 <h2>Jay W. Forrester: System Dynamics</h2>
@@ -2394,28 +2407,32 @@ Figure&nbsp;1: Forrester, J.W. (2009) Some Basic Concepts in System Dynamics
 </figcaption>
 </figure>
 </div>
+<!--
+* "Many believe that system dynamics has helped them become skilled at
+inventing the future, either by sketching out causal loops on the 
+back of an envelope, or by assembling equations of cause and effect in a
+computer model. Both approaches work." (Forrester, 1995)
+-->
 <ul>
-<li><p>“Many believe that system dynamics has helped them become skilled at inventing the future, either by sketching out causal loops on the back of an envelope, or by assembling equations of cause and effect in a computer model. Both approaches work.” (Forrester, 1995)</p></li>
-<li><p>“… students can deal with high-order dynamic systems without ever discovering that their elders consider such to be very difficult.” (Forrester 2009)</p></li>
+<li>“… students can deal with high-order dynamic systems without ever discovering that their elders consider such to be very difficult.” (Forrester 2009)</li>
 </ul>
 <!--
 Link does not  exist anymore
 (https://web.mit.edu/sysdyn/sd-intro/D-4165-1.pdf)
 -->
 </section>
-<section id="system-dynamics-presentation" class="slide level2">
-<h2>System Dynamics Presentation</h2>
+<section id="system-dynamics" class="slide level2">
+<h2>System Dynamics</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-f280d2b11363a3b3231e" style="width:960px;height:384px;"></div>
-<script type="application/json" data-for="htmlwidget-f280d2b11363a3b3231e">{"x":{"diagram":"digraph feedback {\n         graph [rankdir = \"LR\", bgcolor=\"none\"]\n           node [shape = box, penwidth=2, fontname = \"Helvetica\"]\n             \"Population N\"\n           node [shape = octagon, penwidth=0.5, style=\"rounded\", fixedsize=25, fontsize=8]\n             Source Sink\n           node [shape = none, fontsize=10]\n             birth death\n           edge [penwidth=1.5]\n             Source -> birth -> \"Population N\" -> death -> Sink\n           edge [penwidth=0.7, tailport = \"n\", headport = \"n\", constraint = false, color=tomato]\n             \"Population N\" -> birth \n             \"Population N\" -> death\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-2f212afe961f285c64fb" style="width:960px;height:384px;"></div>
+<script type="application/json" data-for="htmlwidget-2f212afe961f285c64fb">{"x":{"diagram":"digraph feedback {\n         graph [rankdir = \"LR\", bgcolor=\"none\"]\n           node [shape = box, penwidth=2, fontname = \"Helvetica\"]\n             \"Population N\"\n           node [shape = octagon, penwidth=0.5, style=\"rounded\", fixedsize=25, fontsize=8]\n             Source Sink\n           node [shape = none, fontsize=10]\n             birth death\n           edge [penwidth=1.5]\n             Source -> birth -> \"Population N\" -> death -> Sink\n           edge [penwidth=0.7, tailport = \"n\", headport = \"n\", constraint = false, color=tomato]\n             \"Population N\" -> birth \n             \"Population N\" -> death\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><span class="math display">\[
 \begin{align}
 \frac{dN}{dt} &amp;= \mbox{birth} - \mbox{death}\\
-              &amp; = \mbox{birthrate} \cdot N - \mbox{deathrate}\cdot N\\
-              &amp;= b \cdot N - d \cdot N = (b-d) \cdot N \\
+              &amp;= b \cdot N - d \cdot N\\
 \frac{dN}{dt} &amp;= r \cdot N\\
 \end{align}
 \]</span></p>
@@ -2470,20 +2487,19 @@ Then render it in RStudio and the resulting
 <ul>
 <li>Evolving technologies for data analysis and modeling</li>
 <li>Server-based or on local computer</li>
-<li>Numerical libraries, visualization, reporting and presentation freely available</li>
+<li>Numerical libraries, visualization, reporting … freely available</li>
 </ul>
 <p><br></p>
 <h3 id="challenges">Challenges</h3>
 <ul>
-<li>Modern didactic concepts needed, technical approach is not enough.</li>
+<li>Modern didactic concept requred, technical approach is not enough.</li>
 <li>Formulation of texts:
 <ul>
 <li>detailed vs.&nbsp;brief explanations?</li>
-<li>appropriate level? <span class="gray">(background knowledge would make understanding easier)</span></li>
+<li>target group?</li>
 </ul></li>
 <li>Graphical presentation will need professionals.</li>
-<li>Avoid “cinema mode”</li>
-<li>Encourage further studies and the motivation to dig deeper.</li>
+<li>Avoid “cinema mode” and encourage further studies to dig deeper.</li>
 </ul>
 </section></section>
 <section>
