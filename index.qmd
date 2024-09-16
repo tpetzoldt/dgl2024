@@ -264,9 +264,6 @@ The image is rather small, but the idea is to either:
 
 <br>
 
-**Example: Logistic Growth Model**
-
-<br>
 <!--
 Difference Equation
 
@@ -275,7 +272,7 @@ N_{t+1} = N_t + r_{max} \cdot N_{t} \cdot \left(1-\frac{N}{K}\right)
 $$
 -->
 
-Differential equation
+**Differential equation**
 
 $$
 \begin{align}
@@ -283,16 +280,20 @@ $$
 \end{align}
 $$
 
-* intuitive understanding of mechanisms 
-* needs numrical solver
 
-Closed-form integral solution
+* intuitive understanding of mechanisms, needs numerical solver
+
+
+
+**Closed-form integral solution**
 
 $$
 N_t = \frac{K N_0 e^{r t}}{K + N_0 (e^{r t}-1)}
 $$
-* can be plotted with Excel
-* mechanisms difficult to access
+
+
+* can be plotted with Excel, mechanisms difficult to see
+
 
 <!--
 ## Advantages and Disadvantages
@@ -470,11 +471,8 @@ plot(yout$time, yout$N, type = "l", col = "forestgreen")
 
 ### Challenges
 
-* Modern didactic concept requred, technical approach is not enough.
-* Formulation of texts:
-    - detailed vs. brief explanations?
-    - target group?
-* Graphical presentation will need professionals.
+* Technical approach is not enough.
+* Graphics design and formulation of texts.
 * Avoid "cinema mode" and encourage further studies to dig deeper.
 
 

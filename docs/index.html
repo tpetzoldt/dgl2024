@@ -629,7 +629,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"id":1,"options":{"label":"lotka-volterra","results":"markup","dpi":72,"autorun":"false","editor-quick-suggestions":"false","out-width":"700px","read-only":"false","warning":"true","context":"interactive","fig-width":"7","comment":"","out-height":"","message":"true","fig-cap":"","fig-height":"2.5","editor-word-wrap":"true","classes":"","output":"true","editor-font-scale":"0.5","editor-max-height":""},"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dN <- r * N\n    list(c(dN))\n  })\n}\n\ny0    <- c(N = 1)\nparms <- c(r = 0.1)\nyout  <- dde(y = y0, times = 0:50, func = model, parms = parms)\nplot(yout$time, yout$N, type = \"l\", col = \"forestgreen\")"},{"id":2,"options":{"label":"lotka-volterra","results":"markup","dpi":72,"autorun":"false","editor-quick-suggestions":"false","out-width":"700px","read-only":"false","warning":"true","context":"interactive","fig-width":"7","comment":"","out-height":"","message":"true","fig-cap":"","fig-height":"2.5","editor-word-wrap":"true","classes":"","output":"true","editor-font-scale":"0.5","editor-max-height":""},"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dA <- a * A - b * A * B\n    dB <- c * A * B - d * B\n    list(c(dA, dB))\n  })\n}\n\ny0    <- c(A = 1, B = 0.5)\nparms <- c(a = 0.1, b = 0.1, c = 0.1, d = 0.1)\nyout  <- dde(y = y0, times = 0:200, func = model, parms = parms)\nplot(yout$time, yout$A, type = \"l\", col = \"forestgreen\")\nlines(yout$time, yout$B, col = \"red\")"}];
+  globalThis.qwebrCellDetails = [{"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dN <- r * N\n    list(c(dN))\n  })\n}\n\ny0    <- c(N = 1)\nparms <- c(r = 0.1)\nyout  <- dde(y = y0, times = 0:50, func = model, parms = parms)\nplot(yout$time, yout$N, type = \"l\", col = \"forestgreen\")","options":{"label":"lotka-volterra","editor-quick-suggestions":"false","fig-width":"7","read-only":"false","message":"true","output":"true","results":"markup","dpi":72,"context":"interactive","out-width":"700px","classes":"","fig-cap":"","fig-height":"2.5","editor-font-scale":"0.5","comment":"","out-height":"","autorun":"false","editor-word-wrap":"true","warning":"true","editor-max-height":""},"id":1},{"code":"library(\"PBSddesolve\")\npar(mar=c(4, 4, 1, 1), las = 1)\n\nmodel <- function(t, y, parms) {\n  with(as.list(c(y, parms)), {\n    dA <- a * A - b * A * B\n    dB <- c * A * B - d * B\n    list(c(dA, dB))\n  })\n}\n\ny0    <- c(A = 1, B = 0.5)\nparms <- c(a = 0.1, b = 0.1, c = 0.1, d = 0.1)\nyout  <- dde(y = y0, times = 0:200, func = model, parms = parms)\nplot(yout$time, yout$A, type = \"l\", col = \"forestgreen\")\nlines(yout$time, yout$B, col = \"red\")","options":{"label":"lotka-volterra","editor-quick-suggestions":"false","fig-width":"7","read-only":"false","message":"true","output":"true","results":"markup","dpi":72,"context":"interactive","out-width":"700px","classes":"","fig-cap":"","fig-height":"2.5","editor-font-scale":"0.5","comment":"","out-height":"","autorun":"false","editor-word-wrap":"true","warning":"true","editor-max-height":""},"id":2}];
 
   </script>
   <script type="module">
@@ -2335,28 +2335,29 @@ The image is rather small, but the idea is to either:
 <section id="which-kind-of-description-is-the-simplest" class="slide level2">
 <h2>Which kind of description is the simplest?</h2>
 <p><br></p>
-<p><strong>Example: Logistic Growth Model</strong></p>
-<p><br> <!--
+<!--
 Difference Equation
 
 $$
 N_{t+1} = N_t + r_{max} \cdot N_{t} \cdot \left(1-\frac{N}{K}\right)
 $$
---></p>
-<p>Differential equation</p>
+-->
+<p><strong>Differential equation</strong></p>
 <p><span class="math display">\[
 \begin{align}
 \frac{dN}{dt} &amp;= r_{max}  \cdot N\cdot \left(1 - \frac{N}{K}\right)
 \end{align}
 \]</span></p>
 <ul>
-<li>intuitive understanding of mechanisms</li>
-<li>needs numrical solver</li>
+<li>intuitive understanding of mechanisms, needs numerical solver</li>
 </ul>
-<p>Closed-form integral solution</p>
+<p><strong>Closed-form integral solution</strong></p>
 <p><span class="math display">\[
 N_t = \frac{K N_0 e^{r t}}{K + N_0 (e^{r t}-1)}
-\]</span> * can be plotted with Excel * mechanisms difficult to access</p>
+\]</span></p>
+<ul>
+<li>can be plotted with Excel, mechanisms difficult to see</li>
+</ul>
 <!--
 ## Advantages and Disadvantages
 
@@ -2425,8 +2426,8 @@ Link does not  exist anymore
 <h2>System Dynamics</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-2f212afe961f285c64fb" style="width:960px;height:384px;"></div>
-<script type="application/json" data-for="htmlwidget-2f212afe961f285c64fb">{"x":{"diagram":"digraph feedback {\n         graph [rankdir = \"LR\", bgcolor=\"none\"]\n           node [shape = box, penwidth=2, fontname = \"Helvetica\"]\n             \"Population N\"\n           node [shape = octagon, penwidth=0.5, style=\"rounded\", fixedsize=25, fontsize=8]\n             Source Sink\n           node [shape = none, fontsize=10]\n             birth death\n           edge [penwidth=1.5]\n             Source -> birth -> \"Population N\" -> death -> Sink\n           edge [penwidth=0.7, tailport = \"n\", headport = \"n\", constraint = false, color=tomato]\n             \"Population N\" -> birth \n             \"Population N\" -> death\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-fc1466d3f3cbac0417fd" style="width:960px;height:384px;"></div>
+<script type="application/json" data-for="htmlwidget-fc1466d3f3cbac0417fd">{"x":{"diagram":"digraph feedback {\n         graph [rankdir = \"LR\", bgcolor=\"none\"]\n           node [shape = box, penwidth=2, fontname = \"Helvetica\"]\n             \"Population N\"\n           node [shape = octagon, penwidth=0.5, style=\"rounded\", fixedsize=25, fontsize=8]\n             Source Sink\n           node [shape = none, fontsize=10]\n             birth death\n           edge [penwidth=1.5]\n             Source -> birth -> \"Population N\" -> death -> Sink\n           edge [penwidth=0.7, tailport = \"n\", headport = \"n\", constraint = false, color=tomato]\n             \"Population N\" -> birth \n             \"Population N\" -> death\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><span class="math display">\[
@@ -2492,13 +2493,8 @@ Then render it in RStudio and the resulting
 <p><br></p>
 <h3 id="challenges">Challenges</h3>
 <ul>
-<li>Modern didactic concept requred, technical approach is not enough.</li>
-<li>Formulation of texts:
-<ul>
-<li>detailed vs.&nbsp;brief explanations?</li>
-<li>target group?</li>
-</ul></li>
-<li>Graphical presentation will need professionals.</li>
+<li>Technical approach is not enough.</li>
+<li>Graphics design and formulation of texts.</li>
 <li>Avoid “cinema mode” and encourage further studies to dig deeper.</li>
 </ul>
 </section></section>
