@@ -45,17 +45,18 @@ filters:
 library("DiagrammeR")
 ```
 
-<!--
-# Status and Aim {data-background-color="#006ab2"}
--->
+
+# Do you know this? {data-background-color="#006ab2"}
+
 
 ## Hooray -- We have got a new project!
 
 <hr></hr>
 
-![](img/funding.png){width="80%"}
 
-<!--
+::: {.column width="49%"}
+<br><br>
+<small>
 FUNDING DECISION - DIGITAL LEARNING AND TEACHING FUND 2023
 
 Dear ...
@@ -69,8 +70,13 @@ to announce. This decision was made at the jury meeting chaired by the Vice-Rect
 For the realisation of the project: ..... euros are available to you.
 
 Please note that ...
+</small>
+:::
 
--->
+
+::: {.column width="50%"}
+![](img/funding.png) <!--{width="80%"} -->
+:::
 
 ## Qualified People?
 
@@ -80,25 +86,25 @@ Please note that ...
 
 <br>
 
-Modeling and data science became an important part of limnology.
+$\Rightarrow$ Modeling and data science became an important part of limnology.
 
 <br>
 
 
 **Demand in Research and Engineering**
 
-* people who can use computers
-* people who can understand models
-* people who are able to develop models
+* people who can [use]{.cyan} computers
+* people who can [understand]{.cyan} models
+* people who are able to [develop]{.cyan} models
 
 **School Experience** 
 
-* mathematics is complicated
-* programming is something for nerds 
-* differential calculus is rocket science
+* [mathematics]{.neongreen} is complicated
+* [programming]{.neongreen} is something for nerds 
+* differential [calculus]{.neongreen} is rocket science
 
 
-
+<!--
 
 ## Ecology and Modeling Skills at Different Levels
 
@@ -107,22 +113,18 @@ Modeling and data science became an important part of limnology.
 **1. Field and Laboratory Ecologists**
 
 - Skills: Field and lab ecology, hypotheses, fundamental stats/modeling
-- Role: Collect data, inform research, experimental design
+- Role: Experimental design, perform experiments, collect data, conduct research
 
-**2. Ecological Data Analysts**
-
-- Skills: Ecology, data analysis, statistics, communication
-- Role: Analyze data, inform decisions
-
-**3. Ecological Modelers**
+**2. Ecological Data Analysts and modelers**
 
 - Skills: Ecology, statistics and modeling, programming, computation
-- Role: Develop models, simulate processes, interpret outcomes
+- Role: Analyze data, develop models, simulate processes, interpret outcomes
 
-**4. Ecological Data Science and Modeling Specialists**
+**3. Ecological Data Science and Modeling Specialists**
 
 - Skills: Data science, machine learning + AI, fundamentals of ecology
 - Role: Create algorithms, develop data-driven and knowledge-based solutions
+-->
 
 <!--
 
@@ -265,7 +267,7 @@ The image is rather small, but the idea is to either:
 Difference Equation
 
 $$
-N_{t+1} = r_{max} \cdot N_{t} \cdot \left(1-\frac{N}{K}\right)
+N_{t+1} = N_t + r_{max} \cdot N_{t} \cdot \left(1-\frac{N}{K}\right)
 $$
 
 Differential equation
@@ -312,11 +314,12 @@ $$
 ![Model](img/forrester-fig4.png){width="46%"}
 
 :::
-
+<!--
 * "Many believe that system dynamics has helped them become skilled at
 inventing the future, either by sketching out causal loops on the 
 back of an envelope, or by assembling equations of cause and effect in a
 computer model. Both approaches work." (Forrester, 1995)
+-->
 
 * "... students can deal with high-order dynamic systems
 without ever discovering that their elders consider such to be very difficult."
@@ -356,8 +359,7 @@ grViz("digraph feedback {
 $$
 \begin{align}
 \frac{dN}{dt} &= \mbox{birth} - \mbox{death}\\
-              & = \mbox{birthrate} \cdot N - \mbox{deathrate}\cdot N\\
-              &= b \cdot N - d \cdot N = (b-d) \cdot N \\
+              &= b \cdot N - d \cdot N\\
 \frac{dN}{dt} &= r \cdot N\\
 \end{align}
 $$
