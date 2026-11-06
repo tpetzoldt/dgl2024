@@ -2,7 +2,7 @@
 author: "Thomas Petzoldt and Johannes Feldbauer"
 title: "Web-based applications"
 subtitle: "(how) to motivate students to become enthusiastic data scientists and modelers?"
-date:   "2024-09-17"
+date: "2024-09-17"
 date-format: "YYYY-MM-DD"
 output-dir: docs
 title-slide-attributes:
@@ -30,12 +30,14 @@ format:
     slide-number: true
     code-line-numbers: false
     link-external-newwindow: true
-    footer: "<span style='color: white; font-size: small; font-weight:400; float: right; margin-top: 40px; margin-right: 4%;'> [&#x1F3E0;](../) </span>"
+    footer: "<span style='color: white; font-size: small; font-weight:400; float: right; margin-top: 40px; margin-right: 4%;'> updated 2026-11-06 [&#x1F3E0;](../) </span>"
 #bibliography: bib.bib
 #csl: apa.csl
-webr: 
+webr:
+  repo:
+    - https://repo.r-wasm.org/
   show-startup-message: false    # Disable displaying status of webR initialization
-  packages: ['PBSddesolve'] # Install R packages on document open
+  packages: ['deSolve']          # Install R packages on document open
 filters:
   - webr
 #embed-resources: true
@@ -427,7 +429,7 @@ $$
 #|  fig-height: 2.5
 #|  fig-width: 7
 
-library("PBSddesolve")
+library("deSolve")
 par(mar=c(4, 4, 1, 1), las = 1)
 
 model <- function(t, y, parms) {
@@ -439,7 +441,7 @@ model <- function(t, y, parms) {
 
 y0    <- c(N = 1)
 parms <- c(r = 0.1)
-yout  <- dde(y = y0, times = 0:50, func = model, parms = parms)
+yout  <- as.data.frame(ode(y = y0, times = 0:50, func = model, parms = parms))
 plot(yout$time, yout$N, type = "l", col = "forestgreen")
 
 ```
@@ -492,7 +494,7 @@ plot(yout$time, yout$N, type = "l", col = "forestgreen")
 #|  fig-height: 2.5
 #|  fig-width: 7
 
-library("PBSddesolve")
+library("deSolve")
 par(mar=c(4, 4, 1, 1), las = 1)
 
 model <- function(t, y, parms) {
@@ -505,7 +507,7 @@ model <- function(t, y, parms) {
 
 y0    <- c(A = 1, B = 0.5)
 parms <- c(a = 0.1, b = 0.1, c = 0.1, d = 0.1)
-yout  <- dde(y = y0, times = 0:200, func = model, parms = parms)
+yout  <- as.data.frame(ode(y = y0, times = 0:200, func = model, parms = parms))
 plot(yout$time, yout$A, type = "l", col = "forestgreen")
 lines(yout$time, yout$B, col = "red")
 ```
